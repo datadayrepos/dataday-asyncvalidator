@@ -1,0 +1,70 @@
+{
+    "name": "__PACKAGE_NAME__",
+    "type": "module",
+    "version": "0.0.1",
+    "private": true,
+    "packageManager": "pnpm@8.9.0",
+    "description": "__PACKAGE_DESCRIPTION__",
+    "author": "__AUTHOR_NAME__",
+    "license": "__LICENSE_TYPE__",
+    "homepage": "https://github.com/__GITHUB_USERNAME__/__REPOSITORY_NAME__#readme",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/__GITHUB_USERNAME__/__REPOSITORY_NAME__.git"
+    },
+    "bugs": {
+      "url": "https://github.com/__GITHUB_USERNAME__/__REPOSITORY_NAME__/issues"
+    },
+    "keywords": [
+      "__KEYWORD_1__",
+      "__KEYWORD_2__",
+      "__KEYWORD_3__"
+    ],
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.mjs",
+        "require": "./dist/index.cjs"
+      }
+    },
+    "main": "./dist/index.mjs",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "typesVersions": {
+      "*": {
+        "*": [
+          "./dist/*",
+          "./dist/index.d.ts"
+        ]
+      }
+    },
+    "files": [
+      "dist"
+    ],
+    "scripts": {
+      "lint": "eslint --cache .",
+      "lint:fix": "eslint . --fix",
+      "release": "bumpp -r && pnpm -r publish",
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "typecheck": "tsc --noEmit",
+      "build": "tsc",
+      "pub": "npm publish --access public"
+    },
+    "devDependencies": {
+        "@datadayrepos/eslint-config": "^1.0.1-beta.11",
+        "@datadayrepos/eslint-plugin-datadayrepos": "1.0.0-Beta12",
+        "@datadayrepos/ni": "^0.21.8",
+        "@types/node": "^20.8.3",
+        "eslint": "^8.51.0",
+        "eslint-plugin-sort-keys": "^2.3.5",
+        "lint-staged": "^14.0.1",
+        "pnpm": "^8.8.0",
+        "typescript": "^5.2.2"
+    },
+    "lint-staged": {
+      "*.{js,ts,tsx,vue,md}": [
+        "eslint --cache --fix"
+      ]
+    }
+  }
+  
